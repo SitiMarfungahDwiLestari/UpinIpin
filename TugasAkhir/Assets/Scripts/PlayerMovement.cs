@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         //biar playernya bisa kekanan kiri pake AD atau panah 
-        float horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxis("Horizontal");
 
         //buka transform untuk ngeflip (hadap) karakter 
         if (horizontalInput > 0.01f)
@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
             if (horizontalInput == 0)
             {
                 body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 50, 0);
-                transform.localScale = new Vector3(Mathf.Sign(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                transform.localScale = new Vector3(Mathf.Sign(transform.localScale.x) * 5, transform.localScale.y, transform.localScale.z);
             }
             else body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 15, 30);
             wallJumpCooldown = 0;
