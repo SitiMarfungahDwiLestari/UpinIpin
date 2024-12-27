@@ -1,0 +1,155 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|d:\\kuliah\\semester 7\\pengembangan game\\upinipin\\tugasakhir\\assets\\scripts\\heartcollectible.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\heartcollectible.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DC1E272-65A8-74B3-097C-352791C58BCE}|Assembly-CSharp.csproj|D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DC1E272-65A8-74B3-097C-352791C58BCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DC1E272-65A8-74B3-097C-352791C58BCE}|Assembly-CSharp.csproj|D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\assets\\scripts\\enemy_sideways.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DC1E272-65A8-74B3-097C-352791C58BCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy_sideways.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DC1E272-65A8-74B3-097C-352791C58BCE}|Assembly-CSharp.csproj|D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\assets\\scripts\\healthbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DC1E272-65A8-74B3-097C-352791C58BCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\healthbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DC1E272-65A8-74B3-097C-352791C58BCE}|Assembly-CSharp.csproj|D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\assets\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DC1E272-65A8-74B3-097C-352791C58BCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DC1E272-65A8-74B3-097C-352791C58BCE}|Assembly-CSharp.csproj|D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\assets\\scripts\\door.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DC1E272-65A8-74B3-097C-352791C58BCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\door.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DC1E272-65A8-74B3-097C-352791C58BCE}|Assembly-CSharp.csproj|D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DC1E272-65A8-74B3-097C-352791C58BCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HeartCollectible.cs",
+              "DocumentMoniker": "D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\Assets\\Scripts\\HeartCollectible.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HeartCollectible.cs",
+              "ToolTip": "D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\Assets\\Scripts\\HeartCollectible.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HeartCollectible.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T09:27:41.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Enemy_Sideways.cs",
+              "DocumentMoniker": "D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\Assets\\Scripts\\Enemy_Sideways.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy_Sideways.cs",
+              "ToolTip": "D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\Assets\\Scripts\\Enemy_Sideways.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy_Sideways.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAABUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T09:07:43.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Healthbar.cs",
+              "DocumentMoniker": "D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\Assets\\Scripts\\Healthbar.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Healthbar.cs",
+              "ToolTip": "D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\Assets\\Scripts\\Healthbar.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Healthbar.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T07:50:54.518Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Health.cs",
+              "DocumentMoniker": "D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\Assets\\Scripts\\Health.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Health.cs",
+              "ToolTip": "D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\Assets\\Scripts\\Health.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Health.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwB4AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T06:58:02.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Door.cs",
+              "DocumentMoniker": "D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\Assets\\Scripts\\Door.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Door.cs",
+              "ToolTip": "D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\Assets\\Scripts\\Door.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Door.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T04:21:38.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CameraController.cs",
+              "DocumentMoniker": "D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\Assets\\Scripts\\CameraController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CameraController.cs",
+              "ToolTip": "D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\Assets\\Scripts\\CameraController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CameraController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T04:10:43.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\Assets\\Scripts\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",
+              "ToolTip": "D:\\kuliah\\semester 7\\Pengembangan Game\\UpinIpin\\TugasAkhir\\Assets\\Scripts\\PlayerMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerMovement.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T16:36:22.674Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 36,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
