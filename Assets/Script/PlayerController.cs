@@ -46,5 +46,17 @@ public class PlayerController : MonoBehaviour
             isOnGround = true;
             jumpCount = 0;
         }
+
+        // Tambahkan ini untuk mendeteksi saw
+        if (collision.gameObject.CompareTag("Saw"))
+        {
+            // Nonaktifkan kontrol player
+            enabled = false;
+
+            // Optional: Bisa tambahkan efek
+            // Destroy(gameObject);  // Jika ingin player hancur
+            // atau
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;  // Berhenti bergerak
+        }
     }
 }
