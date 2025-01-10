@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,26 +7,39 @@ public class PlayerController : MonoBehaviour
     private int jumpCount = 0;
     public float moveSpeed = 5f;
     public int maxJumps = 2;
+    private float minX;  
 
     void Start()
-    { 
+    {
         playerRb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Update batas kiri player berdasarkan posisi kamera
+        minX = Camera.main.transform.position.x - 9f;
+
+        // Gerakan kanan kiri
         float moveHorizontal = Input.GetAxis("Horizontal");
         transform.Translate(Vector2.right * moveHorizontal * moveSpeed * Time.deltaTime);
 
+        // Batasi gerakan ke kiri
+        if (transform.position.x < minX)
+        {
+            Vector3 playerPos = transform.position;
+            playerPos.x = minX;
+            transform.position = playerPos;
+        }
+
+        // Lompat
         if (Input.GetKeyDown(KeyCode.UpArrow) && jumpCount < maxJumps)
         {
-           playerRb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+            playerRb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
             jumpCount++;
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)  // Ini untuk 2D
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
