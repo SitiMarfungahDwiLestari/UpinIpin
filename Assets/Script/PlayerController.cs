@@ -3,27 +3,27 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D playerRb;
-    private bool isOnGround = true;
     private int jumpCount = 0;
     public float moveSpeed = 5f;
     public int maxJumps = 2;
-    private float minX;  
+    private float minX;
+    private HealthManager healthManager;
+    private Vector3 startPosition;
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
+        healthManager = GetComponent<HealthManager>();
+        startPosition = transform.position;
     }
 
     void Update()
     {
-        // Update batas kiri player berdasarkan posisi kamera
         minX = Camera.main.transform.position.x - 9f;
 
-        // Gerakan kanan kiri
         float moveHorizontal = Input.GetAxis("Horizontal");
         transform.Translate(Vector2.right * moveHorizontal * moveSpeed * Time.deltaTime);
 
-        // Batasi gerakan ke kiri
         if (transform.position.x < minX)
         {
             Vector3 playerPos = transform.position;
@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
             transform.position = playerPos;
         }
 
-        // Lompat
         if (Input.GetKeyDown(KeyCode.UpArrow) && jumpCount < maxJumps)
         {
             playerRb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
@@ -43,20 +42,23 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isOnGround = true;
             jumpCount = 0;
         }
 
-        // Tambahkan ini untuk mendeteksi saw
         if (collision.gameObject.CompareTag("Saw"))
         {
-            // Nonaktifkan kontrol player
-            enabled = false;
+            healthManager.TakeDamage();
 
-            // Optional: Bisa tambahkan efek
-            // Destroy(gameObject);  // Jika ingin player hancur
-            // atau
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;  // Berhenti bergerak
+            if (healthManager.currentHealth > 0)  // Diubah dari GetCurrentHealth()
+            {
+                transform.position = startPosition;
+                playerRb.velocity = Vector2.zero;
+            }
+            else
+            {
+                enabled = false;
+                playerRb.velocity = Vector2.zero;
+            }
         }
     }
 }
