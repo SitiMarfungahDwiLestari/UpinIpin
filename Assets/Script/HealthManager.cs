@@ -29,11 +29,18 @@ public class HealthManager : MonoBehaviour
             Image heart = Instantiate(heartPrefab);
             heart.transform.SetParent(healthDisplay.transform, false);
             // Ubah posisi ke pojok kiri atas
-            heart.rectTransform.anchoredPosition = new Vector2(10 + (i * 40), -10);
+            heart.rectTransform.anchoredPosition = new Vector2(10 + (i * 30), -10);
             // X: 10 = jarak dari kiri
             // i * 40 = jarak antar heart
             // Y: -10 = jarak dari atas
         }
+    }
+
+    public void AddHealth(int amount)
+    {
+        // Tambah health tapi tidak melebihi maxHealth
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        DisplayHearts();
     }
 
     public void TakeDamage()
