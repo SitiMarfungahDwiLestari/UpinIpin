@@ -1,11 +1,12 @@
 // HealthManager.cs
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
     public int maxHealth = 3;
-    public int currentHealth;  // Diubah jadi public
+    public int currentHealth;
     public Image heartPrefab;
     private GameObject healthDisplay;
 
@@ -47,5 +48,12 @@ public class HealthManager : MonoBehaviour
     {
         currentHealth--;
         DisplayHearts();
+
+        // Cek jika health habis
+        if (currentHealth <= 0)
+        {
+            // Pindah ke scene GameOver
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }
