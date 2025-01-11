@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private float minX;
     private HealthManager healthManager;
     private Vector3 startPosition;
+    public AudioClip hitSound;
 
     void Start()
     {
@@ -20,7 +22,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         minX = Camera.main.transform.position.x - 9f;
-
         float moveHorizontal = Input.GetAxis("Horizontal");
         transform.Translate(Vector2.right * moveHorizontal * moveSpeed * Time.deltaTime);
 
@@ -47,9 +48,16 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Saw"))
         {
+            // Mainkan suara hit dulu
+            if (AudioManager.Instance != null && hitSound != null)
+            {
+                AudioManager.Instance.musicSource.PlayOneShot(hitSound);
+            }
+
+            // Kurangi health
             healthManager.TakeDamage();
 
-            if (healthManager.currentHealth > 0)  // Diubah dari GetCurrentHealth()
+            if (healthManager.currentHealth > 0)
             {
                 transform.position = startPosition;
                 playerRb.velocity = Vector2.zero;
@@ -58,6 +66,7 @@ public class PlayerController : MonoBehaviour
             {
                 enabled = false;
                 playerRb.velocity = Vector2.zero;
+                SceneManager.LoadScene("GameOver");
             }
         }
     }
