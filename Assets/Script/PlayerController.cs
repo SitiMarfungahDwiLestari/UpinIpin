@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             {
                 enabled = false;
                 playerRb.velocity = Vector2.zero;
-                SceneManager.LoadScene("GameOver");
+                SceneManager.LoadScene(2);
             }
         }
         if (collision.gameObject.CompareTag("Enemy"))

@@ -11,7 +11,7 @@ public class GameOverScore : MonoBehaviour
         {
             Debug.Log("GameOver Score: " + MainManager.Instance.currentScore); // Debug
 
-            finalScoreText.text = "Your Score: " + MainManager.Instance.currentScore;
+            finalScoreText.text = "" + MainManager.Instance.currentScore;
 
             // Update high score jika perlu
             if (MainManager.Instance.currentScore > MainManager.Instance.highScore)
