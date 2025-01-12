@@ -9,14 +9,14 @@ public class PlayerController : MonoBehaviour
     public int maxJumps = 2;
     private float minX;
     private HealthManager healthManager;
-    private Vector3 startPosition;
+    private Vector3 currentCheckPoint;
     public AudioClip hitSound;
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         healthManager = GetComponent<HealthManager>();
-        startPosition = transform.position;
+        currentCheckPoint = transform.position;
     }
 
     void Update()
@@ -48,18 +48,16 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Saw"))
         {
-            // Mainkan suara hit dulu
             if (AudioManager.Instance != null && hitSound != null)
             {
                 AudioManager.Instance.musicSource.PlayOneShot(hitSound);
             }
 
-            // Kurangi health
             healthManager.TakeDamage();
 
             if (healthManager.currentHealth > 0)
             {
-                transform.position = startPosition;
+                transform.position = currentCheckPoint;  // Gunakan posisi checkpoint
                 playerRb.velocity = Vector2.zero;
             }
             else
@@ -69,5 +67,34 @@ public class PlayerController : MonoBehaviour
                 SceneManager.LoadScene("GameOver");
             }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("DeathZone"))
+        {
+            if (AudioManager.Instance != null && hitSound != null)
+            {
+                AudioManager.Instance.musicSource.PlayOneShot(hitSound);
+            }
+            healthManager.TakeDamage();
+            if (healthManager.currentHealth > 0)
+            {
+                transform.position = currentCheckPoint;
+                playerRb.velocity = Vector2.zero;
+            }
+            else
+            {
+                enabled = false;
+                playerRb.velocity = Vector2.zero;
+                SceneManager.LoadScene("GameOver");
+            }
+        }
+    }
+
+    public void SetCheckPoint(Vector3 position)
+    {
+        currentCheckPoint = new Vector3(position.x, position.y + 1f, position.z); // Tambah sedikit Y agar tidak terjebak di tanah
+        Debug.Log("New checkpoint position: " + currentCheckPoint);
     }
 }

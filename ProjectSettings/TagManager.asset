@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Saw
   - Heart
+  - DeathZone
   layers:
   - Default
   - TransparentFX
