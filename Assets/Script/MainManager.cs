@@ -1,13 +1,10 @@
 using UnityEngine;
 using System.IO;
-
 public class MainManager : MonoBehaviour
 {
     public static MainManager Instance;
     public int currentScore;
     public int highScore;
-
-    
 
     [System.Serializable]
     public class SaveData
@@ -24,13 +21,13 @@ public class MainManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        LoadHighScore(); // Load highscore saat game dimulai
     }
 
     public void SaveHighScore()
     {
         SaveData data = new SaveData();
         data.highScore = highScore;
-
         string json = JsonUtility.ToJson(data);
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
     }
@@ -45,8 +42,19 @@ public class MainManager : MonoBehaviour
             highScore = data.highScore;
         }
     }
+
     public void ResetScore()
     {
         currentScore = 0;
+    }
+
+    // Tambahkan fungsi ini untuk mengecek dan update highscore
+    public void CheckHighScore()
+    {
+        if (currentScore > highScore)
+        {
+            highScore = currentScore;
+            SaveHighScore();
+        }
     }
 }

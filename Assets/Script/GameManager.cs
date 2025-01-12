@@ -17,8 +17,9 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void StartScene()
+    public void StartGame()
     {
+        MainManager.Instance.ResetScore();
         SceneManager.LoadScene(1);
     }
     public void RestartGame()
