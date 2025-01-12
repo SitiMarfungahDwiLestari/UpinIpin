@@ -8,9 +8,12 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public int maxJumps = 2;
     private float minX;
-    private HealthManager healthManager;
-    private Vector3 currentCheckPoint;
+    public HealthManager healthManager;
+    public Vector3 currentCheckPoint;
     public AudioClip hitSound;
+    public GameObject bulletPrefab;     
+    public Transform shootPoint;        // Titik munculnya peluru
+    public AudioClip shootSound;        // Suara tembakan
 
     void Start()
     {
@@ -37,6 +40,10 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
             jumpCount++;
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -57,7 +64,30 @@ public class PlayerController : MonoBehaviour
 
             if (healthManager.currentHealth > 0)
             {
-                transform.position = currentCheckPoint;  // Gunakan posisi checkpoint
+                transform.position = currentCheckPoint;
+                playerRb.velocity = Vector2.zero;
+            }
+            else
+            {
+                enabled = false;
+                playerRb.velocity = Vector2.zero;
+                SceneManager.LoadScene("GameOver");
+            }
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Hit Enemy!"); // Tambahkan ini untuk debug
+
+            if (AudioManager.Instance != null && hitSound != null)
+            {
+                AudioManager.Instance.musicSource.PlayOneShot(hitSound);
+            }
+
+            healthManager.TakeDamage();
+
+            if (healthManager.currentHealth > 0)
+            {
+                transform.position = currentCheckPoint;
                 playerRb.velocity = Vector2.zero;
             }
             else
@@ -94,7 +124,19 @@ public class PlayerController : MonoBehaviour
 
     public void SetCheckPoint(Vector3 position)
     {
-        currentCheckPoint = new Vector3(position.x, position.y + 1f, position.z); // Tambah sedikit Y agar tidak terjebak di tanah
+        currentCheckPoint = new Vector3(position.x, position.y + 1f, position.z); 
         Debug.Log("New checkpoint position: " + currentCheckPoint);
+    }
+
+    void Shoot()
+    {
+        // Instantiate bullet
+        GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, transform.rotation);
+
+        // Play sound
+        if (AudioManager.Instance != null && shootSound != null)
+        {
+            AudioManager.Instance.musicSource.PlayOneShot(shootSound);
+        }
     }
 }

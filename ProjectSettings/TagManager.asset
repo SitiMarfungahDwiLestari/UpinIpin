@@ -9,6 +9,9 @@ TagManager:
   - Saw
   - Heart
   - DeathZone
+  - Enemy
+  - Coin
+  - Bullet
   layers:
   - Default
   - TransparentFX
