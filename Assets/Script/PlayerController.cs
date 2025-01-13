@@ -12,14 +12,16 @@ public class PlayerController : MonoBehaviour
     public Vector3 currentCheckPoint;
     public AudioClip hitSound;
     public GameObject bulletPrefab;     
-    public Transform shootPoint;        // Titik munculnya peluru
-    public AudioClip shootSound;        // Suara tembakan
+    public Transform shootPoint;        
+    public AudioClip shootSound;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         healthManager = GetComponent<HealthManager>();
         currentCheckPoint = transform.position;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -27,6 +29,19 @@ public class PlayerController : MonoBehaviour
         minX = Camera.main.transform.position.x - 9f;
         float moveHorizontal = Input.GetAxis("Horizontal");
         transform.Translate(Vector2.right * moveHorizontal * moveSpeed * Time.deltaTime);
+
+        if (moveHorizontal > 0)
+        {
+            spriteRenderer.flipX = true;
+            // Ubah posisi shootPoint ke kanan
+            shootPoint.localPosition = new Vector3(Mathf.Abs(shootPoint.localPosition.x), shootPoint.localPosition.y, 0);
+        }
+        else if (moveHorizontal < 0)
+        {
+            spriteRenderer.flipX = false;
+            // Ubah posisi shootPoint ke kiri
+            shootPoint.localPosition = new Vector3(-Mathf.Abs(shootPoint.localPosition.x), shootPoint.localPosition.y, 0);
+        }
 
         if (transform.position.x < minX)
         {
@@ -132,6 +147,12 @@ public class PlayerController : MonoBehaviour
     {
         // Instantiate bullet
         GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, transform.rotation);
+
+        // Dapatkan komponen Bullet
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+
+        // Set arah berdasarkan arah player
+        bulletScript.direction = spriteRenderer.flipX ? 1 : -1;
 
         // Play sound
         if (AudioManager.Instance != null && shootSound != null)

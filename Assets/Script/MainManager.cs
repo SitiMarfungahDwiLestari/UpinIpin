@@ -48,7 +48,6 @@ public class MainManager : MonoBehaviour
         currentScore = 0;
     }
 
-    // Tambahkan fungsi ini untuk mengecek dan update highscore
     public void CheckHighScore()
     {
         if (currentScore > highScore)
