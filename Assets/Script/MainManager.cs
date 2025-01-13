@@ -56,4 +56,14 @@ public class MainManager : MonoBehaviour
             SaveHighScore();
         }
     }
+    public void DeleteHighScore()
+    {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            File.Delete(path); // Hapus file save
+        }
+        highScore = 0;        // Reset high score ke 0
+        currentScore = 0;     // Reset current score ke 0
+    }
 }

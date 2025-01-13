@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        MainManager.Instance.ResetScore();
+        MainManager.Instance.DeleteHighScore(); 
         SceneManager.LoadScene(1);
     }
 
