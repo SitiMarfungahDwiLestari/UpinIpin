@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
     public HealthManager healthManager;
     public Vector3 currentCheckPoint;
     public AudioClip hitSound;
-    public GameObject bulletPrefab;     
-    public Transform shootPoint;        
+    public GameObject bulletPrefab;
+    public Transform shootPoint;
     public AudioClip shootSound;
     private SpriteRenderer spriteRenderer;
 
@@ -91,15 +91,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Hit Enemy!"); // Tambahkan ini untuk debug
-
-            if (AudioManager.Instance != null && hitSound != null)
-            {
-                AudioManager.Instance.musicSource.PlayOneShot(hitSound);
-            }
-
             healthManager.TakeDamage();
-
             if (healthManager.currentHealth > 0)
             {
                 transform.position = currentCheckPoint;
@@ -139,22 +131,15 @@ public class PlayerController : MonoBehaviour
 
     public void SetCheckPoint(Vector3 position)
     {
-        currentCheckPoint = new Vector3(position.x, position.y + 1f, position.z); 
+        currentCheckPoint = new Vector3(position.x, position.y + 1f, position.z);
         Debug.Log("New checkpoint position: " + currentCheckPoint);
     }
 
     void Shoot()
     {
-        // Instantiate bullet
         GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, transform.rotation);
-
-        // Dapatkan komponen Bullet
         Bullet bulletScript = bullet.GetComponent<Bullet>();
-
-        // Set arah berdasarkan arah player
         bulletScript.direction = spriteRenderer.flipX ? 1 : -1;
-
-        // Play sound
         if (AudioManager.Instance != null && shootSound != null)
         {
             AudioManager.Instance.musicSource.PlayOneShot(shootSound);

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 public class MainManager : MonoBehaviour
@@ -21,7 +23,11 @@ public class MainManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        LoadHighScore(); // Load highscore saat game dimulai
+        LoadHighScore();
+    }
+    void Start()
+    {
+        Screen.SetResolution(1280, 720, false);
     }
 
     public void SaveHighScore()
@@ -61,9 +67,9 @@ public class MainManager : MonoBehaviour
         string path = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(path))
         {
-            File.Delete(path); // Hapus file save
+            File.Delete(path); 
         }
-        highScore = 0;        // Reset high score ke 0
-        currentScore = 0;     // Reset current score ke 0
+        highScore = 0;       
+        currentScore = 0;     
     }
 }
