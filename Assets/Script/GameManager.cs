@@ -22,6 +22,19 @@ public class GameManager : MonoBehaviour
         MainManager.Instance.ResetScore();
         SceneManager.LoadScene(1);
     }
+
+    public void NewGame()
+    {
+        MainManager.Instance.ResetScore();
+        SceneManager.LoadScene(1);
+    }
+
+    public void HighScore()
+    {
+        MainManager.Instance.ResetScore();
+        SceneManager.LoadScene(1);
+    }
+
     public void RestartGame()
     {
         MainManager.Instance.ResetScore();  
